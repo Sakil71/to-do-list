@@ -3,7 +3,7 @@ const emptyList = document.getElementById('empty-list');
 
 //Empty data list
 const emptyListData = () => {
-    if (toDoList.children) {
+    if (toDoList.children) {        
         emptyList.style.display = 'none';
     }
 }
@@ -18,19 +18,18 @@ const myToDo = () => {
     };
     emptyListData();
     const div = document.createElement('div');
-    div.classList.add('flex', 'justify-between');
+    div.classList.add('flex', 'justify-between', 'break-all');
     div.innerHTML = `
         <li><label for="checkbox"><input id='checkbox' class="mr-4" type="checkbox" name="">${todoInpurValue}</label></li>
         <button><i class="fa-regular fa-rectangle-xmark text-2xl text-red-600 hover:text-red-800"></i></button>
     `
     todoList.appendChild(div);
-    todoInput.value = '';
     saveData();
 }
 
 //Add List by add button
 document.getElementById('add-btn').addEventListener('click', () => {
-    myToDo();
+    myToDo();    
 });
 
 //Add List by Enter key
@@ -57,6 +56,6 @@ const saveData = () => {
     localStorage.setItem('data', toDoList.innerHTML);
 }
 const showDataList = () => {
-    toDoList.innerHTML = localStorage.getItem('data',)
+    toDoList.innerHTML = localStorage.getItem('data');
 }
 showDataList();
