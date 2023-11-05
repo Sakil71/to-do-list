@@ -24,6 +24,7 @@ const myToDo = () => {
         <button><i class="fa-regular fa-rectangle-xmark text-2xl text-red-600 hover:text-red-800"></i></button>
     `
     todoList.appendChild(div);
+    todoInput.value = '';
     saveData();
 }
 
